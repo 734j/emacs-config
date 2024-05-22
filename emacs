@@ -25,3 +25,9 @@
 (setq c-basic-offset 4) ; Tab width (but for C?)
 (find-file "/home/oskar/doc/how2emacs.txt") 
 (switch-to-buffer "*scratch*")
+
+(defun lmid ()
+  ;;Move cursor to the middle of the current line 
+  (interactive)
+  (let ((line-length (- (line-end-position) (line-beginning-position))))
+    (goto-char (+ (line-beginning-position) (/ line-length 2)))))
